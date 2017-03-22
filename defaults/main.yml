@@ -1,0 +1,26 @@
+---
+
+# Repository list and packages. By default it will not install anything.
+#
+# The list should be:
+#   - name: <string>
+#     packages: <list>
+#
+# Example:
+#   - name: user/project
+#     packages:
+#       - package1
+#       - package2
+#
+# Example, actual repo/packages, multiple entries:
+#   - name: ganto/lxd
+#     packages:
+#       - lxd
+#       - lxd-client
+#   - name: nalimilan/julia
+#     packages:
+#       - julia
+copr_repo_list:
+
+# Keep packages update (present | latest | absent).
+copr_repo_update: latest

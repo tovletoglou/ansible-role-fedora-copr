@@ -1,0 +1,28 @@
+---
+
+# - name: Debug - Copr repositories to enable
+#   debug:
+#     var: item.name
+#     verbosity: 1
+#   with_items: "{{ copr_repo_list }}"
+
+- name: Enable Fedora Copr repositories
+  become: yes
+  command: "dnf copr enable -y {{ item.name }}"
+  changed_when: false # This will never report 'changed' status. But it will report 'ok', 'unreachable' or 'failed'
+  when: item.name is defined
+  with_items: "{{ copr_repo_list }}"
+
+# - name: Debug - Packages to install
+#   debug:
+#     var: item
+#     verbosity: 1
+#   with_items: "{{ copr_repo_list | json_query('[*].packages') }}"
+
+- name: Install packages from Copr repositories
+  become: yes
+  dnf:
+    name: "{{ item }}"
+    state: "{{ copr_repo_update }}"
+  when: not((item | trim == ''))
+  with_items: "{{ copr_repo_list | json_query('[*].packages') }}"
