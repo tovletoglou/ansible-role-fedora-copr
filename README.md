@@ -16,24 +16,24 @@ Repository list and packages. By default it will not install anything.
 
 The list should be:
 
-```
+```yml
 - name: <string>
   packages: <list>
 ```
 
-```
+```yml
 copr_repo_list:
 ```
 
-Keep packages update (present | latest | absent).
+Keep packages update (`present | latest | absent`).
 
-```
+```yml
 copr_repo_update: latest
 ```
 
 ## Example
 
-```
+```yml
 - hosts: all
   roles:
     - ansible-role-fedora-copr
@@ -43,9 +43,10 @@ copr_repo_update: latest
         packages:
           - lxd
           - lxd-client
-      - name: nalimilan/julia
+      - name: heikoada/terminix
         packages:
-          - julia
+          - tilix
+    copr_repo_update: latest
 ```
 
 ## Dependencies
