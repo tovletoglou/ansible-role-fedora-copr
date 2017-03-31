@@ -59,4 +59,4 @@ MIT
 
 ## Author Information
 
-Apostolos Tovletoglou [ansible-role-fedora-copr](https://github.com/tovletoglou/ansible-fedora-copr)
+Apostolos Tovletoglou [ansible-role-fedora-copr](https://github.com/tovletoglou/ansible-role-fedora-copr)
