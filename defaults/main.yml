@@ -23,4 +23,4 @@
 copr_repo_list:
 
 # Keep packages update (present | latest | absent).
-copr_repo_update: latest
+copr_repo_update: present
